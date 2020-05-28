@@ -7,8 +7,10 @@ import pandas as pd
 import re
 
 def scrapping(job, where):
-    browser = webdriver.Chrome(executable_path="C:/Users/Utilisateur/Desktop/Selenium/chromedriver/chromedriver.exe")
-    
+#     browser = webdriver.Chrome(executable_path="chromedriver/chromedriver.exe")
+
+    browser = webdriver.Firefox(executable_path="geckodriver/geckodriver.exe")
+
     browser.get('https://www.indeed.fr/')
     browser.maximize_window()
     
@@ -25,18 +27,11 @@ def scrapping(job, where):
     clickSearch.click()
     
     #Dict
-    getInfo = {'Job Title': [], 'Name Company': [], 'Location': [], 'Type of contract': [], 'Salary': [], 'Minimum level of education required': [], 'Minimum experience level required': [], 'Spoken languages': []}
+    getInfo = {'Job Title': [], 'Name Company': [], 'Location': [], 'Work time': [], 'Type of contract': [], 'Salary': [], 'Desired skills': [], 'Minimum level of education required': [], 'Minimum experience level required': [], 'Spoken languages': []}
     nameJob = browser.find_elements_by_class_name('jobsearch-SerpJobCard')
     
     #Scrapping    
     while True:
-                
-        #Fermer popup
-        # try:
-        #     time.sleep(0.5)
-        #     browser.find_element_by_class_name('popover-x-button-close').click()    
-        # except:
-        #     pass
         
         #Ouvrir descJob
         for i in nameJob:
@@ -58,32 +53,39 @@ def scrapping(job, where):
             except NoSuchElementException:
                 getInfo['Location'].append('No Info')
 
-#                 try:
-#                     getWorkTime = re.match('(\btemps plein\b)|(\btemps partiel\b)', descJob)
-#                     getInfo['Work time'].append(getWorkTime)
-#                 except NoSuchElementException:
-#                     getInfo['Work time'].append('No Info')
-
             descJob = i.find_element_by_xpath("//*[@id='vjs-content']").text
+            
+            #Work time
+            matchWorkTime = re.search(r'\bTemps plein\b|\bTemps partiel\b', descJob)
+            try:
+                getInfo['Work time'].append(matchWorkTime.group())
+            except:
+                getInfo['Work time'].append('No Info')
 
             #Contract
-            matchContract = re.search(r'\bCDI\b|\bCDD\b|\bAlternance\b|\bStage\b|\bSTAGE\b|\bStage\b', descJob)
+            matchContract = re.search(r'\bCDI\b|\bCDD\b|\bApprentissage\b|\bApprentissage, Contrat pro\b|\bStage\b|\bSTAGE\b|\bStage\b|\bIntérim\b|\bFreelance\b|\bIndépendant\b|\bFreelance \/ Indépendant\b', descJob)
             try:
                 getInfo['Type of contract'].append(matchContract.group(0))
             except:
                 getInfo['Type of contract'].append('No Info')
 
             #Salary
-#                 matchSalary = re.compile(r"([0-9])")
-#                 mo1 = matchSalary.search(descJob)
-#                 try:
-#                     if mo1:
-#                         getInfo['Salary'].append(mo1.group())
-#                 except NoSuchElementException:
-#                     getInfo['Salary'].append('No Info')
+            matchSalary = re.search(r"\b(?:\d[ - ]*?){3,5}( € \- )(?:\d[ - ]*?){3,5}( € par jour)\b|\b(?:\d[ - ]*?){3,5}( € \- )(?:\d[ - ]*?){3,5}( € par mois)\b|\b(?:\d[ - ]*?){3,5}( € \- )(?:\d[ - ]*?){3,5}( € par an)\b|\b(?:\d[ - ]*?){3,5}(€ par jour)\b|\b(?:\d[ - ]*?){3,5}( € par jour)\b|\b(?:\d[ - ]*?){3,5}(€ par mois)\b|\b(?:\d[ - ]*?){3,5}( € par mois)\b|\b(?:\d[ - ]*?){3,5}( € par an)\b|\b(?:\d[ - ]*?){3,5}(€ par an)\b", descJob)
+            try:
+                getInfo['Salary'].append(matchSalary.group(0))
+            except:
+                getInfo['Salary'].append('No Info')
 
+            #Skills
+            matchSkills = re.findall(r'\bPython\b|\bpython\b|\bPYTHON\b|\bR\b|\bSQL\b|\bNoSQL\b|\bGIT\b|\bSpark\b|\bspark\b|\bflask\b|\bFlask\b|\bstreamlit\b|\bStreamlit\b|\bDocker\b|\bdocker\b|\bKubernetes\b|\bkubernetes\b|\bReactJS\b|\bMachine Learning\b|\bDeep Learning\b|\bNLP\b|\bVueJS\b|\bAngularJS\b|\bScala\b|\bscala\b|\bPySpark\b|\bPyspark\b|\bPowerBI\b|\bSQLSERVER\b|\bSQLServer\b|\bDataiku\b|\bdataiku\b|\bKeras\b|\bkeras\b|\btensorflow\b|\bTensorFlow\b|\bTensorflow\b|\bNLU\b|\bPytorch\b|\bpytorch\b|\bPyTorch\b|\bScikitLearn\b|\bscikitlearn\b|\bScikitlearn\b|\bScikit-Learn\b|\bScikit-learn\b|\bSAS\b|\bJava\b|\bjava\b|\bScikit learn\b|\bhadoop\b|\bHadoop\b|\bhive\b|\bHive\b|\bML\/DL\b|\bAzure\b|\bAWS\b', descJob)
+            matchSkills = list(dict.fromkeys(matchSkills)) #Supprimer les doublons
+            try:
+                getInfo['Desired skills'].append(matchSkills)
+            except:
+                getInfo['Desired skills'].append('No Info')
+            
             #Education Level
-            matchEduLevel = re.search(r"(\bformation supérieure\b|\bBAC\+5\b|\bBac\+5\b|\bbac\+5\b|\bBac \+ 5\b|\bBac \+ 5 \/ M2\b|\bDiplôme ingénieur\b|\bdiplôme ingénieur\b|\bBAC\+4\b|\bBac\+4\b|\bbac\+4\b|\bBac \+ 4\b|\bMaster 2\b|\bmaster 2\b|\bBAC\+3\b|\bBac\+3\b|\bbac\+3\b|\bBac \+ 3\b|\bgrande école d\'ingénieur\b|\bgrande école d\’ingénieur\b|\bBAC\+4\/5\b|\bBac\+4\/5\b|\bbac\+4\/5\b|\bM2\b|\bCursus ingénieur\b|\bcursus ingénieur\b|\bformation Data Science ou IA\b|\bFormation Data Science ou IA\b|\bformation Data Science\b|\bFormation Data Science\b|\buniversité\b|\buniversitaire\b)", descJob)
+            matchEduLevel = re.search(r"(\bformation supérieure\b|\bBAC\+5\b|\bBac\+5\b|\bbac\+5\b|\bBac \+ 5\b|\bBac \+ 5 \/ M2\b|\bDiplôme ingénieur\b|\bdiplôme ingénieur\b|\bBAC\+4\b|\bBac\+4\b|\bbac\+4\b|\bBac \+ 4\b|\bMaster 2\b|\bmaster 2\b|\bBAC\+3\b|\bBac\+3\b|\bbac\+3\b|\bBac \+ 3\b|\bgrande école d\'ingénieur\b|\bgrande école d\’ingénieur\b|\bBAC\+4\/5\b|\bBac\+4\/5\b|\bbac\+4\/5\b|\bM2\b|\bCursus ingénieur\b|\bcursus ingénieur\b|\bformation Data Science ou IA\b|\bFormation Data Science ou IA\b|\bformation Data Science\b|\bFormation Data Science\b|\buniversité\b|\bUniversité\b|\bUniversitaire\b|\buniversitaire\b)", descJob)
             try:
                 getInfo['Minimum level of education required'].append(matchEduLevel.group(0))
             except:
@@ -103,14 +105,16 @@ def scrapping(job, where):
             except:
                 getInfo['Spoken languages'].append('No Info')
             
-        try:
-            nextPage = browser.find_element_by_css_selector("[aria-label='Suivant']")
-            nextPage.click()
-            time.sleep(3)
-        except:
-            print("No more pages")
-        
-             
+#         try:
+#             nextPage = browser.find_element_by_css_selector("[aria-label='Suivant']")
+#             nextPage.click()
+#             time.sleep(3)
+#             #Fermer popup
+#             time.sleep(2)
+#             browser.find_element_by_class_name('popover-x-button-close').click()
+#         except:
+#             print("No more pages")
+                
         job = 'Datascientist'
         df = pd.DataFrame({ key:pd.Series(value) for key, value in getInfo.items() })
         df.to_csv(f'{job}.csv', index=False, encoding='utf-8')

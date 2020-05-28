@@ -1,12 +1,12 @@
-Job Title,Name Company,Location,Type of contract,Salary,Minimum level of education required,Minimum experience level required,Spoken languages
-DATASCIENTIST (F/H),Novencia,Lyon (69),No Info,,No Info,4 ans,No Info
-Datascientist - Intern - DATA LAB,L'Oreal,Clichy (92),STAGE,,Cursus ingénieur,No Info,Anglais
-Développeur BI / Datascientist F/H,Netplus,Boulogne-Billancourt (92),CDI,,universitaire,2/3 ans,No Info
-Datascientist H/F,Système U,Rungis (94),CDI,,No Info,No Info,No Info
-DataScientist IA – NLP H/F,LCL,Villejuif (94),CDI,,Bac + 5,3 - 5 ans,Anglais
-Ingénieur Datascientist / Onboarder F/H,NEO2,Paris 11e (75),CDI,,grande école d’ingénieur,No Info,No Info
-Datascientist (H/F),Groupe Estia,Paris (75),No Info,,No Info,2 ans,No Info
-Consultant Data CDI,AfterData,Ivry-sur-Seine (94),CDI,,Diplôme ingénieur,3 ans,No Info
-Consultant Datascientist H/F,AMAYAS Consulting,Paris,CDI,,universitaire,No Info,No Info
-Datascientist,Weave,Paris (75),No Info,,No Info,No Info,No Info
-Développeur BI / Datascientist F/H,Euris,Boulogne-Billancourt (92),CDI,,universitaire,2/3 ans,No Info
+Job Title,Name Company,Location,Work time,Type of contract,Salary,Desired skills,Minimum level of education required,Minimum experience level required,Spoken languages
+DATASCIENTIST (F/H),Novencia,Lyon (69),No Info,No Info,No Info,"['Machine Learning', 'Python', 'R', 'SQL']",No Info,4 ans,No Info
+Datascientist - Intern - DATA LAB,L'Oreal,Clichy (92),No Info,STAGE,No Info,"['Machine Learning', 'NLP', 'Deep Learning', 'Python', 'GIT', 'Spark', 'Scala', 'PySpark', 'flask', 'ReactJS', 'VueJS', 'Docker', 'Kubernetes']",Cursus ingénieur,No Info,Anglais
+Développeur BI / Datascientist F/H,Netplus,Boulogne-Billancourt (92),No Info,CDI,No Info,"['Machine Learning', 'PowerBI', 'Python', 'SQLSERVER', 'SQL', 'R']",universitaire,2/3 ans,No Info
+Ingénieur Datascientist / Onboarder F/H,NEO2,Paris 11e (75),No Info,CDI,No Info,"['PYTHON', 'Python']",grande école d’ingénieur,No Info,No Info
+Datascientist H/F,Système U,Rungis (94),Temps plein,CDI,No Info,"['Dataiku', 'SQL', 'Python', 'R', 'dataiku']",No Info,No Info,No Info
+DataScientist IA – NLP H/F,LCL,Villejuif (94),No Info,CDI,No Info,"['Hadoop', 'NLP', 'NLU', 'Machine Learning', 'Deep Learning', 'Python', 'Pyspark', 'R', 'tensorflow', 'keras', 'pytorch', 'scikitlearn', 'Docker']",Bac + 5,3 - 5 ans,Anglais
+Datascientist,Weave,Paris (75),No Info,No Info,No Info,[],No Info,No Info,No Info
+Datascientist (H/F),Groupe Estia,Paris (75),No Info,No Info,No Info,"['SAS', 'R', 'Python', 'Java', 'NoSQL', 'Hadoop']",No Info,2 ans,No Info
+Développeur BI / Datascientist F/H,Euris,Boulogne-Billancourt (92),No Info,CDI,No Info,"['Machine Learning', 'PowerBI', 'Python', 'SQLSERVER', 'SQL', 'R']",universitaire,2/3 ans,No Info
+Consultant Data CDI,AfterData,Ivry-sur-Seine (94),No Info,CDI,40 000 € - 50 000 € par an,"['R', 'Python', 'Machine Learning']",Diplôme ingénieur,3 ans,No Info
+Consultant Datascientist H/F,AMAYAS Consulting,Paris,No Info,CDI,No Info,"['Python', 'Spark', 'R', 'Tensorflow', 'Scikit learn', 'Hadoop', 'Hive']",universitaire,No Info,No Info
