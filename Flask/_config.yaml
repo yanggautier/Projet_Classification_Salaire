@@ -1,0 +1,14 @@
+#Présentation développeur
+profil:
+  name: Salim OKAR
+  name1: Guole YANG
+  name2: François DEWUNTER
+
+#Présentation Projet
+projet:
+  title1: Régression - 
+  title2: Prédiction salaire
+  description: >
+    L'objectif de ce projet est de scrapper les profils de différents postes afin de déterminer grâce à un algorithme quel 
+    proposition de salaire nous pourrons proposé à un candidat en fonction de son profil.
+  github: https://github.com/yanggautier/Projet_Regression
