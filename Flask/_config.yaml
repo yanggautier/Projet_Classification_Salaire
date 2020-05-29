@@ -2,7 +2,7 @@
 profil:
   name: Salim OKAR
   name1: Guole YANG
-  name2: François DEWUNTER
+  name2: François DEWYNTER
 
 #Présentation Projet
 projet:
@@ -10,5 +10,52 @@ projet:
   title2: Prédiction salaire
   description: >
     L'objectif de ce projet est de scrapper les profils de différents postes afin de déterminer grâce à un algorithme quel 
-    proposition de salaire nous pourrons proposé à un candidat en fonction de son profil.
+    proposition de salaire nous pourrons proposer à un candidat en fonction de son profil.
+  postes:
+    poste1: Data Scientist
+    poste2: Développeur Python
+    poste3: Développeur JavaScript
+    poste4: Développeur Java
   github: https://github.com/yanggautier/Projet_Regression
+
+csv:
+  item1:
+    title: Data Scientist
+    pays: France
+    description: CSV des différentes offres d'emploi de Data Scientist en France
+    img: datascientist.csv
+  item2:
+    title: Développeur Python
+    pays: France
+    description: CSV des différentes offres d'emploi de Développeur Python en France
+    img: pythonfrance.csv
+  item3:
+    title: Développeur JavaScript
+    pays: France
+    description: CSV des différentes offres d'emploi de Développeur JavaScript en France
+    img: jsfrance.csv
+  item4:
+    title: Développeur Java
+    pays: France
+    description: CSV des différentes offres d'emploi de Développeur Java en France
+    img: javafrance.csv
+  item5:
+    title: Data Scientist
+    pays: USA
+    description: CSV des différentes offres d'emploi de Data Scientist aux USA
+    img: datascientistusa.csv
+  item6:
+    title: Développeur Python
+    pays: USA
+    description: CSV des différentes offres d'emploi de Développeur Python aux USA
+    img: pythonusa.csv
+  item7:
+    title: Développeur JavaScript
+    pays: USA
+    description: CSV des différentes offres d'emploi de Développeur JavaScript aux USA
+    img: jsusa.csv
+  item8:
+    title: Développeur Java
+    pays: USA
+    description: CSV des différentes offres d'emploi de Développeur Java aux USA
+    img: javausa.csv

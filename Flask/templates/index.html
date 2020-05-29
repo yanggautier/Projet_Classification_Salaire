@@ -32,12 +32,12 @@
           <a class="nav-link js-scroll-trigger" href="#about">À propos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#skills">Skills</a>
+          <a class="nav-link js-scroll-trigger" href="#csvfile">CSV</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#experience">Experience</a>
+          <a class="nav-link js-scroll-trigger" href="#prediction">Faire une Prédiction</a>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link js-scroll-trigger" href="#education">Education</a>
         </li>
         <li class="nav-item">
@@ -51,7 +51,7 @@
         </li>
         <li class="nav-item">
           <a class="nav-link js-scroll-trigger" href="#awards">Awards</a>
-        </li>
+        </li> -->
       </ul>
     </div>
   </nav>
@@ -61,27 +61,64 @@
 
     <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="about">
       <div class="w-100">
-        <h1 class="mb-0">{{ data.projet.title1 }}
+        <h1 class="mb-1">{{ data.projet.title1 }}
           <span class="text-primary">{{ data.projet.title2 }}</span>
+          <div class="social-icons">
+            <a href="{{ data.projet.github }}" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
         </h1>
         <div class="subheading mb-3">
           {% for item in data.profil.values() %}
           {% if item != None %}
-            {{ item }} ·
+            · {{ item }}
           {% endif %}
           {% endfor %}
         </div>
-        <p class="lead mb-5">{{ data.projet.description }}</p>
-        <div class="social-icons">
-          <a href="{{ data.projet.github }}" target="_blank">
-            <i class="fab fa-github"></i>
-          </a>
-        </div>
+        <p class="lead mb-3">{{ data.projet.description }}</p>
+        <p class="lead">Nous avons scrapper les postes suivants:</p>
+        <ul class="mt-3 ml-3">
+          {% for item in data.projet.postes.values() %}
+          {% if item != None %}
+            <li> {{ item }} </li>
+          {% endif %}
+          {% endfor %}
+        </ul>
       </div>
     </section>
 
     <hr class="m-0">
   
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="projects">
+      <div class="w-100">
+        <h2 class="mb-5">Projects</h2>
+        <p>This section contains awesome projects that I've developed:</p>
+        <!-- Begins card -->
+        <div class="row">
+          {% for _, item in data.csv.items() %}
+          <div class="col-md-4 mb-5">
+            <div class="card h-100">
+              <img src="static/img/{{ item.img }}" class="card-img-top" alt="{{ item.title }}">
+              <div class="card-body">
+                <h3 class="card-title">{{ item.title }}</h3>
+                <h5 class="card-title">{{ item.pays }}</h5>
+                <p class="card-text">{{ item.description }}</p>
+              </div>
+              <div class="card-footer">
+                {% if item.github != None %}
+                <a href="{{ item.github }}" class="text-dark" target="_blank">
+                  <i class="fab fa-github-square fa-2x"></i>
+                </a>
+                {% endif %}
+                <a href="{{ item.link }}" class="btn btn-dark float-right" target="_blank">View project</a>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
     
 
   <!-- Bootstrap core JavaScript -->
