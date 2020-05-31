@@ -20,9 +20,9 @@ import pandas as pd
 
 def searchJob(jobName, country):
 
-    option = webdriver.ChromeOptions()
-    option.add_argument("--incognito")
-    
+    # option = webdriver.ChromeOptions()
+    # option.add_argument("--incognito")
+
     driver = webdriver.Chrome()
     driver.get('https://www.indeed.fr')
     driver.maximize_window()
@@ -59,19 +59,20 @@ def searchJob(jobName, country):
 
     # Les listes vides pour chaque feature
     getInfo = {'Job Title': [], 'Country': [], 'Name Company': [], 'Location': [], 'Type of contract': [],
-               'Salary': [], 'Description':[]}
-    #getInfo = {'Job Title': [], 'Country': [], 'Name Company': [], 'Location': [], 'Work time': [], 'Type of contract': [],
-     #          'Salary': [],
-     #          'Python': [], 'R': [], 'SQL': [], 'NoSQL': [], 'GIT': [], 'Spark': [], 'Flask': [], 'Streamlit': [], 'Docker': [], 'Kubernetes': [],
-     #          'React': [], 'VueJS': [], 'AngularJS': [],
-      #         'Machine Learning': [], 'Deep Learning': [], 'NLP': [],  'Scala': [], 'PySpark': [],
-     #          'PowerBI': [], 'SQLServer': [], 'Dataiku': [], 'Keras': [], 'TensorFlow': [], 'NLU': [],
-      #         'PyTorch': [], 'ScikitLearn': [], 'Scikit-Learn': [], 'SAS': [],
-     #          'Java': [], 'Scikit learn': [], 'Hadoop': [],  'Hive': [], 'ML DL': [], 'Azure': [], 'AWS': [],
-     #          'Minimum level of education required': [],
-      #         'Minimum experience level required': [], 'Spoken languages': []}
+               'Salary': [], 'Description': []}
 
-    #skills = ['Python', 'R', 'SQL', 'NoSQL', 'GIT', 'Spark', 'Flask', 'Streamlit', 'Docker', 'docker', 'Kubernetes', 'ReactJS', 'Machine Learning', 'Deep Learning', 'NLP', 'VueJS', 'AngularJS', 'Scala', 'PySpark',
+    # getInfo = {'Job Title': [], 'Country': [], 'Name Company': [], 'Location': [], 'Work time': [], 'Type of contract': [],
+    #          'Salary': [],
+    #          'Python': [], 'R': [], 'SQL': [], 'NoSQL': [], 'GIT': [], 'Spark': [], 'Flask': [], 'Streamlit': [], 'Docker': [], 'Kubernetes': [],
+    #          'React': [], 'VueJS': [], 'AngularJS': [],
+    #         'Machine Learning': [], 'Deep Learning': [], 'NLP': [],  'Scala': [], 'PySpark': [],
+    #          'PowerBI': [], 'SQLServer': [], 'Dataiku': [], 'Keras': [], 'TensorFlow': [], 'NLU': [],
+    #         'PyTorch': [], 'ScikitLearn': [], 'Scikit-Learn': [], 'SAS': [],
+    #          'Java': [], 'Scikit learn': [], 'Hadoop': [],  'Hive': [], 'ML DL': [], 'Azure': [], 'AWS': [],
+    #          'Minimum level of education required': [],
+    #         'Minimum experience level required': [], 'Spoken languages': []}
+
+    # skills = ['Python', 'R', 'SQL', 'NoSQL', 'GIT', 'Spark', 'Flask', 'Streamlit', 'Docker', 'docker', 'Kubernetes', 'ReactJS', 'Machine Learning', 'Deep Learning', 'NLP', 'VueJS', 'AngularJS', 'Scala', 'PySpark',
     #          'PowerBI', 'SQLServer', 'Dataiku', 'Keras', 'TensorFlow', 'NLU', 'Pytorch', 'PyTorch', 'ScikitLearn', 'Scikit-Learn', 'SAS', 'Java', 'java', 'Scikit learn', 'Hadoop', 'hive', 'Hive', 'ML DL', 'Azure', 'AWS']
 
     page = True
@@ -118,7 +119,8 @@ def searchJob(jobName, country):
 
                 # Les types de contrat des postes
             try:
-                contrat = driver.find_element_by_css_selector(".jobMetadataHeader-itemWithIcon-icon-jobs + span").text
+                contrat = driver.find_element_by_css_selector(
+                    ".jobMetadataHeader-itemWithIcon-icon-jobs + span").text
                 getInfo['Type of contract'].append(contrat)
             except:
                 getInfo['Type of contract'].append("None")
@@ -139,20 +141,19 @@ def searchJob(jobName, country):
             except TimeoutException:
                 getInfo['Description'].append("None")
 
- 
-
         try:
             element = WebDriverWait(driver, 30).until(
-                EC.presence_of_element_located((By.XPATH,"//a[@aria-label='Suivant'] | //a[@aria-label='Next'] | span[contains(text(),'Suivant')] | span[contains(text(),'Next')]")))
+                EC.presence_of_element_located((By.XPATH, "//a[@aria-label='Suivant'] | //a[@aria-label='Next'] | span[contains(text(),'Suivant')] | span[contains(text(),'Next')]")))
             element.click()
         except TimeoutException:
             page = False
 
-    filename = str.lower(jobName.replace(' ', '').replace('"', '') + country) + ".csv".replace(' ', '')
+    filename = str.lower(jobName.replace(' ', '').replace(
+        '"', '') + country) + ".csv".replace(' ', '')
     df = pd.DataFrame(getInfo)
-    
+
     df.to_csv(filename, index=False, sep=';', encoding="utf-8-sig")
-    
+
     print(filename + "complete")
     driver.quit()
 
@@ -162,9 +163,10 @@ def main():
             '"Data scientist"', '"Python"', '"Javascript"', '"Java"']
     countrys = ['France', 'France', 'France',
                 'France', 'USA', 'USA', 'USA', 'USA']
-    # with concurrent.futures.ProcessPoolExecutor() as executor:
-    #    executor.map(searchJob, jobs, countrys)
-    searchJob('"Data scientist"',  'France')
+
+    with concurrent.futures.ProcessPoolExecutor() as executor:
+        executor.map(searchJob, jobs, countrys)
+    #searchJob('"Data scientist"',  'France')
 
 
 if __name__ == '__main__':
