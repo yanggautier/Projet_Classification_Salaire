@@ -23,39 +23,47 @@ csv:
     title: Data Scientist
     pays: France
     description: CSV des différentes offres d'emploi de Data Scientist en France
-    img: datascientist.csv
+    img: datascientistfrance.png
+    github: https://github.com/yanggautier/Projet_Regression/blob/salim/Flask/csv/datascientistfrance.csv
   item2:
     title: Développeur Python
     pays: France
     description: CSV des différentes offres d'emploi de Développeur Python en France
-    img: pythonfrance.csv
+    img: pythonfrance.png
+    github: https://github.com/yanggautier/Projet_Regression/tree/salim/Flask/csv/pythonfrance.csv
   item3:
     title: Développeur JavaScript
     pays: France
     description: CSV des différentes offres d'emploi de Développeur JavaScript en France
-    img: jsfrance.csv
+    img: jsfrance.png
+    github: https://github.com/yanggautier/Projet_Regression/tree/salim/Flask/csv/jsfrance.csv
   item4:
     title: Développeur Java
     pays: France
     description: CSV des différentes offres d'emploi de Développeur Java en France
-    img: javafrance.csv
+    img: javafrance.png
+    github: https://github.com/yanggautier/Projet_Regression/tree/salim/Flask/csv/javafrance.csv
   item5:
     title: Data Scientist
     pays: USA
     description: CSV des différentes offres d'emploi de Data Scientist aux USA
-    img: datascientistusa.csv
+    img: datascientistusa.png
+    github: https://github.com/yanggautier/Projet_Regression/tree/salim/Flask/csv/datascientistusa.csv
   item6:
     title: Développeur Python
     pays: USA
     description: CSV des différentes offres d'emploi de Développeur Python aux USA
-    img: pythonusa.csv
+    img: pythonusa.png
+    github: https://github.com/yanggautier/Projet_Regression/tree/salim/Flask/csv/pythonusa.csv
   item7:
     title: Développeur JavaScript
     pays: USA
     description: CSV des différentes offres d'emploi de Développeur JavaScript aux USA
-    img: jsusa.csv
+    img: jsusa.png
+    github: https://github.com/yanggautier/Projet_Regression/tree/salim/Flask/csv/jsusa.csv
   item8:
     title: Développeur Java
     pays: USA
     description: CSV des différentes offres d'emploi de Développeur Java aux USA
-    img: javausa.csv
+    img: javausa.png
+    github: https://github.com/yanggautier/Projet_Regression/tree/salim/Flask/csv/javausa.csv

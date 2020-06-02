@@ -72,6 +72,18 @@ font-family: 'Saira Extra Condensed', -apple-system, BlinkMacSystemFont, 'Segoe 
     background-color: #3859bd;
 }
 
+.cardImg {
+    width:  120px;
+    height: 120px;
+}
+
+.card-title {
+    font-size: 18px;
+}
+.card-text {
+    font-size: 15px;
+}
+
 .dev-icons {
     font-size: 3rem;
 }
