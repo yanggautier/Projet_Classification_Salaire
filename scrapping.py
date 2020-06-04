@@ -59,21 +59,28 @@ def searchJob(jobName, country):
         change_country = driver.find_element_by_xpath(
             "//div[@class='invalid_location']/p/a")
         change_country.click()
-        searchInputwhere = driver.find_element_by_id('text-input-where')
-        time.sleep(0.2)
-        # driver.find_element_by_id('text-input-where').click()
 
-        while len(searchInputwhere.get_attribute('value')) != 0:
-            searchInputwhere.send_keys(Keys.BACKSPACE)
+        try:
+            time.sleep(0.5)
 
-        driver.find_element_by_id('text-input-where').send_keys(country)
-        bouton_search = driver.find_element_by_class_name('icl-Button')
-        bouton_search.click()
+            where = driver.find_element_by_id('where')
+            time.sleep(0.2)
+            # driver.find_element_by_id('text-input-where').click()
+
+            while len(where.get_attribute('value')) != 0:
+                where.send_keys(Keys.BACKSPACE)
+
+            driver.find_element_by_id('where').send_keys(country)
+            bouton = driver.find_element_by_id('fj')
+            bouton.click()
+        except:
+            pass
     except:
         pass
 
     # Les listes vides pour chaque feature
-    data = pd.DataFrame({'Poste': [], 'Métier':[],'Pays': [], 'Ville': [], 'Entreprise': [], 'Contrat':[], 'Salaire': [], 'Description': []})
+    data = pd.DataFrame({'Poste': [], 'Métier': [], 'Pays': [], 'Ville': [
+    ], 'Entreprise': [], 'Contrat': [], 'Salaire': [], 'Description': []})
 
     page = True
 
@@ -86,6 +93,8 @@ def searchJob(jobName, country):
         except:
             pass
 
+        #jobcards = WebDriverWait(driver, 120).until(EC.presence_of_element_located((By.CLASS_NAME, 'jobsearch-SerpJobCard')))
+
         # Trouver la carte de chaque job
         jobcards = driver.find_elements_by_class_name('jobsearch-SerpJobCard')
 
@@ -94,11 +103,12 @@ def searchJob(jobName, country):
             job.click()
             time.sleep(0.2)
 
-            job_name = jobName.replace('"','')
+            job_name = jobName.replace('"', '')
 
             # Les noms des posts proposés
             try:
-                title = job.find_element_by_class_name('title').text.replace('\n', '')
+                title = job.find_element_by_class_name(
+                    'title').text.replace('\n', '')
             except NoSuchElementException:
                 title = None
 
@@ -129,16 +139,17 @@ def searchJob(jobName, country):
 
                 # Les descriptions des postes
             try:
-                element = WebDriverWait(driver, 10).until(
+                element = WebDriverWait(driver, 420).until(
                     EC.presence_of_element_located((By.ID, "vjs-content")))
                 description = element.text.replace('\n', ' ')
             except TimeoutException:
                 description = None
 
-            data = pd.concat([data, pd.DataFrame({'Poste': title, 'Métier':job_name,'Pays': country, 'Ville': ville, 'Entreprise': entreprise,'Contrat': contrat,  'Salaire': salaire, 'Description': description}, index=[0])], ignore_index=True)
+            data = pd.concat([data, pd.DataFrame({'Poste': title, 'Métier': job_name, 'Pays': country, 'Ville': ville, 'Entreprise': entreprise,
+                                                  'Contrat': contrat,  'Salaire': salaire, 'Description': description}, index=[0])], ignore_index=True)
 
         try:
-            element = WebDriverWait(driver, 60).until(
+            element = WebDriverWait(driver, 120).until(
                 EC.presence_of_element_located((By.XPATH, "//a[@aria-label='Suivant'] | //a[@aria-label='Next'] | span[contains(text(),'Suivant')] | span[contains(text(),'Next')]")))
             element.click()
         except TimeoutException:
@@ -152,17 +163,18 @@ def searchJob(jobName, country):
     print("Traitement de fichier " + filename + " fini")
     driver.quit()
 
+
 def main():
-    #jobs = ['"Data scientist"', '"Python"', '"Javascript"', '"Java"','"Data scientist"', '"Python"', '"Javascript"', '"Java"']
-    #countrys = ['France', 'France', 'France', 'France', 'USA', 'USA', 'USA', 'USA']
+    jobs = ['"Data scientist"', '"Python"', '"Javascript"', '"Java"',
+            '"Data scientist"', '"Python"', '"Javascript"', '"Java"']
+    countrys = ['France', 'France', 'France',
+                'France', 'USA', 'USA', 'USA', 'USA']
 
-    #jobs = ['"Data scientist"', '"Javascript"']
-    #countrys = ['USA', 'USA']
-    #with concurrent.futures.ProcessPoolExecutor() as executor: executor.map(searchJob, jobs, countrys)
+    with concurrent.futures.ProcessPoolExecutor() as executor:
+        executor.map(searchJob, jobs, countrys)
 
-    searchJob('"Data scientist"',  'France')
+    #searchJob('"Java"',  'USA')
 
 
 if __name__ == '__main__':
     main()
-
