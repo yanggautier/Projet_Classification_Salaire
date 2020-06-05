@@ -109,8 +109,9 @@
 
     <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="prediction">
       <div class="w-100">
-        <h2 class="mb-5">Faire une prédiction</h2>
-        <form>
+        <h2 class="mb-5">Calculer le salaire</h2>
+
+        <form action="/predict" method="POST">
           <div class="form-group row">
               <label for="poste" class="col-sm-2 col-form-label">Métier</label>
               <div class="col-sm-10">
@@ -124,16 +125,53 @@
           </div>
           <fieldset class="form-group">
             <div class="row">
+              <legend class="col-form-label col-sm-2 pt-0">Expérience</legend>
+              <div class="col-sm-10">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="gridRadioExp" id="debutant" value="0" checked>
+                  <label class="form-check-label" for="debutant">
+                    Débutant
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="gridRadioExp" id="intermediaire" value="1">
+                  <label class="form-check-label" for="intermediaire">
+                    Intermédiaire
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="gridRadioExp" id="confirme" value="0">
+                  <label class="form-check-label" for="confirme">
+                    Confirmé
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="gridRadioExp" id="expert" value="1">
+                  <label class="form-check-label" for="expert">
+                    Expert
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="gridRadioExp" id="senior" value="1">
+                  <label class="form-check-label" for="senior">
+                    Senior
+                  </label>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+          <fieldset class="form-group">
+            <div class="row">
               <legend class="col-form-label col-sm-2 pt-0">Pays</legend>
               <div class="col-sm-10">
                 <div class="form-check">
-                  <input class="form-check-input" type="radio" name="gridRadios" id="france" value="0" checked>
+                  <input class="form-check-input" type="radio" name="gridRadiosPays" id="france" value="0" checked>
                   <label class="form-check-label" for="france">
                     France
                   </label>
                 </div>
                 <div class="form-check">
-                  <input class="form-check-input" type="radio" name="gridRadios" id="usa" value="1">
+                  <input class="form-check-input" type="radio" name="gridRadiosPays" id="usa" value="1">
                   <label class="form-check-label" for="usa">
                     USA
                   </label>
@@ -146,7 +184,7 @@
               <legend class="col-form-label col-sm-2 pt-0">Compétences</legend>
               <div class="col-sm-10">
                 <!-- Data Scientist -->
-                <select multiple class="form-control" id="datascientist">
+                <select multiple class="form-control" id="datascientist" required="required">
                   <option value="0">Python</option>
                   <option value="1">R</option>
                   <option value="2">SQL</option>
@@ -172,7 +210,7 @@
                 </select>
 
                 <!-- Python -->
-                <select multiple class="form-control" id="devpython">
+                <select multiple class="form-control" id="devpython" required="required">
                   <option value="0">Python</option>
                   <option value="1">SQL</option>
                   <option value="2">NoSQL</option>
@@ -191,7 +229,7 @@
                 </select>
 
                 <!-- JavaScript -->
-                <select multiple class="form-control" id="devjs">
+                <select multiple class="form-control" id="devjs" required="required">
                   <option value="0">JavaScript (ReactJS / AngularJS / VueJS / NodeJS)</option>
                   <option value="1">JQuery</option>
                   <option value="2">SQL</option>
@@ -205,7 +243,7 @@
                 </select>
 
                 <!-- Java -->
-                <select multiple class="form-control" id="devjava">
+                <select multiple class="form-control" id="devjava" required="required">
                   <option value="0">Java</option>
                   <option value="1">Spring</option>
                   <option value="2">Eclipse</option>
@@ -222,13 +260,38 @@
                   <option value="13">Jenkins / Maven / SVN</option>
                   <option value="14">Microsoft Azure / AWS / Google Cloud Platform</option>
                 </select>
+                <small id="smalltext" class="form-text text-muted">Pour sélectionner plusieurs compétences, il faut rester appuyer sur la touche CTRL et sélectionner les Skills.</small>
               </div>
             </div>
           </fieldset>
           <div class="text-center mt-5">
-            <button type="submit" class="btn btn-primary">Prédiction</button>
+            <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
+              Prédiction
+            </button>
+          </div>
+
+          <!-- Modal -->
+          <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="staticBackdropLabel">Salaire à proposer !</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  {{ prediction_text }}
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                  <button type="reset" class="btn btn-primary" data-dismiss="modal">Faire une nouvelle prédiction</button>
+                </div>
+              </div>
+            </div>
           </div>
         </form>
+
       </div>
     </section>
     
