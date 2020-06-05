@@ -3,13 +3,13 @@
 <head>
     <meta charset="utf-8" />
     <!-- CSS -->
-    <link rel="stylesheet" href="static/css/style.css"/>
+    <link rel="stylesheet" href="../static/css/style.css"/>
     
     <!-- Bootstrap core CSS -->
-    <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- fontawesome -->
-    <link href="static/vendor/fontawesome/css/all.min.css" rel="stylesheet">
+    <link href="../static/vendor/fontawesome/css/all.min.css" rel="stylesheet">
     
     <title>Régression - Prédiction Salaire</title>
 </head>
@@ -112,13 +112,13 @@
         <h2 class="mb-5">Faire une prédiction</h2>
         <form>
           <div class="form-group row">
-              <label for="Métier" class="col-sm-2 col-form-label">Métier</label>
+              <label for="poste" class="col-sm-2 col-form-label">Métier</label>
               <div class="col-sm-10">
-                <select id="Métier" class="form-control">
-                  <option>Data Scientist</option>
-                  <option>Développeur Python</option>
-                  <option>Développeur JavaScript</option>
-                  <option>Développeur Java</option>
+                <select id="poste" class="form-control">
+                  <option value="dscientist">Data Scientist</option>
+                  <option value="python">Développeur Python</option>
+                  <option value="js">Développeur JavaScript</option>
+                  <option value="java">Développeur Java</option>
                 </select>
             </div>
           </div>
@@ -127,14 +127,14 @@
               <legend class="col-form-label col-sm-2 pt-0">Pays</legend>
               <div class="col-sm-10">
                 <div class="form-check">
-                  <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
-                  <label class="form-check-label" for="gridRadios1">
+                  <input class="form-check-input" type="radio" name="gridRadios" id="france" value="0" checked>
+                  <label class="form-check-label" for="france">
                     France
                   </label>
                 </div>
                 <div class="form-check">
-                  <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-                  <label class="form-check-label" for="gridRadios2">
+                  <input class="form-check-input" type="radio" name="gridRadios" id="usa" value="1">
+                  <label class="form-check-label" for="usa">
                     USA
                   </label>
                 </div>
@@ -145,108 +145,126 @@
             <div class="row">
               <legend class="col-form-label col-sm-2 pt-0">Compétences</legend>
               <div class="col-sm-10">
+                <!-- Data Scientist -->
                 <select multiple class="form-control" id="datascientist">
-                  <option>Python</option>
-                  <option>R</option>
-                  <option>SQL</option>
-                  <option>NoSQL</option>
-                  <option>Numpy, Pandas, Matplotlib, Seaborn, ScikitLearn...</option>
-                  <option>Machine Learning</option>
-                  <option>Deep Learning</option>
-                  <option>Git</option>
-                  <option>Flask</option>
-                  <option>Streamlit</option>
-                  <option>Django</option>
-                  <option>Docker</option>
-                  <option>Microsoft Azure / AWS / Google Cloud Platform</option>
-                  <option>Spark Apache</option>
-                  <option>Pyspark</option>
-                  <option>PyTorch</option>
-                  <option>Tensorflow</option>
-                  <option>Keras</option>
-                  <option>PowerBI, Tableau, Bokeh...</option>
-                  <option>HTML/CSS</option>
-                  <option>Bootstrap</option>
+                  <option value="0">Python</option>
+                  <option value="1">R</option>
+                  <option value="2">SQL</option>
+                  <option value="3">NoSQL</option>
+                  <option value="4">Numpy, Pandas, Matplotlib, Seaborn, ScikitLearn...</option>
+                  <option value="5">Machine Learning</option>
+                  <option value="6">Deep Learning</option>
+                  <option value="7">Git</option>
+                  <option value="8">Flask</option>
+                  <option value="9">Streamlit</option>
+                  <option value="10">Django</option>
+                  <option value="11">Docker</option>
+                  <option value="12">Microsoft Azure / AWS / Google Cloud Platform</option>
+                  <option value="13">Spark Apache</option>
+                  <option value="14">Pyspark</option>
+                  <option value="15">PyTorch</option>
+                  <option value="16">Tensorflow</option>
+                  <option value="17">Keras</option>
+                  <option value="18">Scraping (Selenium, BeautifulSoup)</option>
+                  <option value="19">PowerBI, Tableau, Bokeh...</option>
+                  <option value="20">HTML/CSS</option>
+                  <option value="21">Bootstrap</option>
                 </select>
-              </div>
-            </div>
-          </fieldset>
-          <fieldset class="form-group">
-            <div class="row">
-              <legend class="col-form-label col-sm-2 pt-0">Compétences</legend>
-              <div class="col-sm-10">
+
+                <!-- Python -->
                 <select multiple class="form-control" id="devpython">
-                  <option>Python</option>
-                  <option>SQL</option>
-                  <option>NoSQL</option>
-                  <option>HTML/CSS</option>
-                  <option>Bootstrap</option>
-                  <option>JavaScript (ReactJS / AngularJS / VueJS)</option>
-                  <option>Git</option>
-                  <option>Flask</option>
-                  <option>Django</option>
-                  <option>Docker</option>
-                  <option>Kubernetes</option>
-                  <option>Jenkins</option>
-                  <option>TFS, BitBucket</option>
-                  <option>Airflow, Kafka</option>
-                  <option>Microsoft Azure / AWS / Google Cloud Platform</option>
+                  <option value="0">Python</option>
+                  <option value="1">SQL</option>
+                  <option value="2">NoSQL</option>
+                  <option value="3">HTML/CSS</option>
+                  <option value="4">Bootstrap</option>
+                  <option value="5">JavaScript (ReactJS / AngularJS / VueJS)</option>
+                  <option value="6">Git</option>
+                  <option value="7">Flask</option>
+                  <option value="8">Django</option>
+                  <option value="9">Docker</option>
+                  <option value="10">Kubernetes</option>
+                  <option value="11">Jenkins</option>
+                  <option value="12">TFS, BitBucket</option>
+                  <option value="12">Airflow, Kafka</option>
+                  <option value="13">Microsoft Azure / AWS / Google Cloud Platform</option>
                 </select>
-              </div>
-            </div>
-          </fieldset>
-          <fieldset class="form-group">
-            <div class="row">
-              <legend class="col-form-label col-sm-2 pt-0">Compétences</legend>
-              <div class="col-sm-10">
+
+                <!-- JavaScript -->
                 <select multiple class="form-control" id="devjs">
-                  <option>JavaScript (ReactJS / AngularJS / VueJS / NodeJS)</option>
-                  <option>JQuery</option>
-                  <option>SQL</option>
-                  <option>NoSQL</option>
-                  <option>HTML/CSS</option>
-                  <option>Bootstrap</option>
-                  <option>Git</option>
-                  <option>Docker</option>
-                  <option>Kafka</option>
-                  <option>Microsoft Azure / AWS / Google Cloud Platform</option>
+                  <option value="0">JavaScript (ReactJS / AngularJS / VueJS / NodeJS)</option>
+                  <option value="1">JQuery</option>
+                  <option value="2">SQL</option>
+                  <option value="3">NoSQL</option>
+                  <option value="4">HTML/CSS</option>
+                  <option value="5">Bootstrap</option>
+                  <option value="6">Git</option>
+                  <option value="7">Docker</option>
+                  <option value="8">Kafka</option>
+                  <option value="9">Microsoft Azure / AWS / Google Cloud Platform</option>
                 </select>
-              </div>
-            </div>
-          </fieldset>
-          <fieldset class="form-group">
-            <div class="row">
-              <legend class="col-form-label col-sm-2 pt-0">Compétences</legend>
-              <div class="col-sm-10">
+
+                <!-- Java -->
                 <select multiple class="form-control" id="devjava">
-                  <option>Java</option>
-                  <option>Spring</option>
-                  <option>Eclipse</option>
-                  <option>SQL</option>
-                  <option>NoSQL</option>
-                  <option>HTML/CSS</option>
-                  <option>Bootstrap</option>
-                  <option>Git</option>
-                  <option>Docker</option>
-                  <option>Jenkins / Maven / SVN</option>
-                  <option>Microsoft Azure / AWS / Google Cloud Platform</option>
+                  <option value="0">Java</option>
+                  <option value="1">Spring</option>
+                  <option value="2">Eclipse</option>
+                  <option value="3">Hibernate</option>
+                  <option value="4">SQL</option>
+                  <option value="5">NoSQL</option>
+                  <option value="6">JavaScript (ReactJS / AngularJS / VueJS / NodeJS)</option>
+                  <option value="7">HTML/CSS</option>
+                  <option value="8">Bootstrap</option>
+                  <option value="9">Git</option>
+                  <option value="10">Docker</option>
+                  <option value="11">Kubernetes</option>
+                  <option value="12">Bitbucket</option>
+                  <option value="13">Jenkins / Maven / SVN</option>
+                  <option value="14">Microsoft Azure / AWS / Google Cloud Platform</option>
                 </select>
               </div>
             </div>
           </fieldset>
-          <button type="submit" class="btn btn-primary">Prédiction</button>
+          <div class="text-center mt-5">
+            <button type="submit" class="btn btn-primary">Prédiction</button>
+          </div>
         </form>
       </div>
     </section>
     
 
   <!-- Bootstrap core JavaScript -->
-  <script src="static/vendor/jquery/jquery.min.js"></script>
-  <script src="static/vendor/bootstrap/js/bootstrap.min.js"></script>
+  <script src="../static/vendor/bootstrap/jquery/jquery.slim.min.js"></script>
+  <script src="../static/vendor/bootstrap/js/bootstrap.min.js"></script>
+
   
   <!-- JS -->
   <script src="static/js/resume.min.js"></script>
-
+  <script>
+    $("#poste").change(function(){
+      if($(this).val() == "dscientist"){
+        $("#datascientist").show();
+      }else{
+        $("#datascientist").hide();
+      }  
+      if($(this).val() == 'python'){
+        $("#devpython").show();
+      }else{
+        $("#devpython").hide();
+      }
+      if($(this).val() == 'js'){
+        $("#devjs").show();
+      }else{
+        $("#devjs").hide();
+      }
+      if($(this).val() == 'java'){
+        $("#devjava").show();
+      }else{
+        $("#devjava").hide();
+      }
+    
+    });
+  </script>
 </body>
 
 </html>

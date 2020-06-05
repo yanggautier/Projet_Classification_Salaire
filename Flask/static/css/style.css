@@ -11,6 +11,15 @@ body {
     }
 }
 
+#devpython{
+    display: none;
+}
+#devjs{
+    display: none;
+}
+#devjava{
+    display: none;
+}
 h1,
 h2,
 h3,
