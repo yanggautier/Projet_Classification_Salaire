@@ -5,7 +5,7 @@ import pickle
 
 app = Flask(__name__)
 app.config['JSON_SORT_KEYS'] = False
-model = pickle.load(open('model.pkl', 'rb'))
+model = pickle.load(open('./Flask/model.pkl', 'rb'))
 
 
 @app.route('/')
