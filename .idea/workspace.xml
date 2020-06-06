@@ -19,12 +19,36 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5621722c-2a94-4af6-9891-7a619936d6b9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Preprocessing.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model.py" afterDir="false" />
+    <list default="true" id="ede36bfa-b558-43bc-8e3d-34e957ac99a1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/Projet_Classification_Salaire.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Scrapping/.idea/Projet_Regression.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Projet_Regression.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Proprocessing.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Proprocessing.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scraping_concat_list.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Preprocessing.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projet Régression - Prédiction Salaire (Scrapping).ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proprocessing.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/Prepo.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/datascientistfrance.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/datascientistusa.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/javafrance.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/javascriptfrance.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/javascriptusa.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/javausa.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/pythonfrance.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/pythonusa.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_for_de_page1_a_500/datascientistfrance.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_for_de_page1_a_500/datascientistusa.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_for_de_page1_a_500/javafrance.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_for_de_page1_a_500/javausa.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_for_de_page1_a_500/jsfrance.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_for_de_page1_a_500/jsusa.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_for_de_page1_a_500/pythonfrance.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_for_de_page1_a_500/pythonusa.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/debug.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/model.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scrapping.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,40 +58,31 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1cVgv9Jor31rShoIzI6Z4yY7MPO" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="1cy1cA2gVnDNsDWGG5SIPETRpSw" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Python" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\yangg\Python\Projet_Regression" />
-    </key>
-  </component>
-  <component name="RunManager" selected="Python.model">
+  <component name="RunManager" selected="Python.app">
     <configuration name="Preprocessing" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Projet_Regression" />
+      <module name="Projet_Classification_Salaire" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Flask" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Preprocessing.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Flask/Preprocessing.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -76,82 +91,19 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="model" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Projet_Regression" />
+    <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Projet_Classification_Salaire" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Flask" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/model.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="scraping" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Projet_Regression" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/scraping.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="scrapping" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Projet_Regression" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/scrapping.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="scrapping2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Projet_Regression" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/scrapping2.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Flask/app.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -162,11 +114,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.model" />
+        <item itemvalue="Python.app" />
         <item itemvalue="Python.Preprocessing" />
-        <item itemvalue="Python.scrapping" />
-        <item itemvalue="Python.scraping" />
-        <item itemvalue="Python.scrapping2" />
       </list>
     </recent_temporary>
   </component>
@@ -175,11 +124,11 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="5621722c-2a94-4af6-9891-7a619936d6b9" name="Default Changelist" comment="" />
-      <created>1590619404375</created>
+      <changelist id="ede36bfa-b558-43bc-8e3d-34e957ac99a1" name="Default Changelist" comment="" />
+      <created>1591486095811</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1590619404375</updated>
+      <updated>1591486095811</updated>
     </task>
     <servers />
   </component>
@@ -193,52 +142,23 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="484" y="8" key="#scraping" timestamp="1590653809410">
+    <state width="1515" height="210" key="GridCell.Tab.0.bottom" timestamp="1591486289894">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="484" y="8" key="#scraping/0.0.1536.824@0.0.1536.824" timestamp="1590653809410" />
-    <state width="1500" height="306" key="GridCell.Tab.0.bottom" timestamp="1591304431999">
+    <state width="1515" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1591486289894" />
+    <state width="1515" height="210" key="GridCell.Tab.0.center" timestamp="1591486289894">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1500" height="306" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1591304431999" />
-    <state width="1500" height="306" key="GridCell.Tab.0.center" timestamp="1591304431999">
+    <state width="1515" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1591486289894" />
+    <state width="1515" height="210" key="GridCell.Tab.0.left" timestamp="1591486289894">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1500" height="306" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1591304431999" />
-    <state width="1500" height="306" key="GridCell.Tab.0.left" timestamp="1591304431999">
+    <state width="1515" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1591486289894" />
+    <state width="1515" height="210" key="GridCell.Tab.0.right" timestamp="1591486289894">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1500" height="306" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1591304431999" />
-    <state width="1500" height="306" key="GridCell.Tab.0.right" timestamp="1591304431999">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1500" height="306" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1591304431999" />
-    <state width="1515" height="261" key="GridCell.Tab.1.bottom" timestamp="1591186833493">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1515" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1591186833493" />
-    <state width="1515" height="261" key="GridCell.Tab.1.center" timestamp="1591186833493">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1515" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1591186833493" />
-    <state width="1515" height="261" key="GridCell.Tab.1.left" timestamp="1591186833493">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1515" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1591186833493" />
-    <state width="1515" height="261" key="GridCell.Tab.1.right" timestamp="1591186833493">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1515" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1591186833493" />
-    <state x="277" y="57" key="SettingsEditor" timestamp="1591173682844">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1591173682844" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1591198783415">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1591198783415" />
+    <state width="1515" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1591486289894" />
   </component>
 </project>
