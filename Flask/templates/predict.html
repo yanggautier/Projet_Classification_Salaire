@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <!-- CSS -->
-    <link rel="stylesheet" href="../static/css/style.css"/>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}"/>
 
     <!-- Bootstrap core CSS -->
     <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -37,19 +37,24 @@
         <li class="nav-item">
           <a class="nav-link js-scroll-trigger" href="/prediction">Faire une Prédiction</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="/predict">Résultat</a>
-        </li>
       </ul>
     </div>
   </nav>
 
   <!-- À propos ! -->
-  <div class="container-fluid p-0">
+<div class="pt-5 mt-5"">
+  <div class="container h-100 pt-5 mt-5">
+    <div class="row align-items-center h-100">
+        <div class="col-6 mx-auto">
+            <div class="jumbotron">
+                  <p>{{ prediction_text }}</p>
 
-    <p>{{ prediction_text }}</p>
-
-
+      <a href="/prediction" class=""><small>Refaire une prédiction</small></a>
+            </div>
+        </div>
+    </div>
+</div>
+  </div>
 
   <!-- Bootstrap core JavaScript -->
   <script src="../static/vendor/bootstrap/jquery/jquery.slim.min.js"></script>

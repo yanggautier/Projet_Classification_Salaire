@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <!-- CSS -->
-    <link rel="stylesheet" href="../static/css/style.css"/>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}"/>
 
     <!-- Bootstrap core CSS -->
     <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -36,9 +36,6 @@
         </li>
         <li class="nav-item">
           <a class="nav-link js-scroll-trigger" href="/prediction">Faire une Prédiction</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="/predict">Résultat</a>
         </li>
       </ul>
     </div>
@@ -354,6 +351,7 @@
               </div>
             </div>
           </fieldset>
+
           <div class="text-center mt-5">
             <button type="submit" class="btn btn-primary">
              Prédiction
@@ -361,7 +359,6 @@
 
           </div>
         </form>
-      <p>{{ prediction_text }}</p>
       </div>
     </section>
 

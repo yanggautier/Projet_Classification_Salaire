@@ -23,7 +23,7 @@ def csv():
 
 @app.route('/prediction', methods=['GET', 'POST'])
 def prediction():
-    return render_template('prediction.html')
+    return render_template('prediction.html',prediction_text=None)
 
 
 @app.route('/predict', methods=['GET', 'POST'])
@@ -92,7 +92,7 @@ def predict():
     else:
         devise = '$'
 
-    return render_template('predict.html', prediction_text = "Votre salaire est autour de " + prediction + devise)
+    return render_template('predict.html', prediction_text = "Votre salaire est entre " + prediction + ' ' + devise + " par an en "+pays)
 
 
 if __name__ == '__main__':
