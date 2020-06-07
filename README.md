@@ -16,7 +16,7 @@ Vous devez télécharger les modules suivants :
 - pandas
 - oyaml
 
-### Installing
+### Installation
 
 Pour installer un module, vous devez utiliser la commande 'pip' dans le terminal de votre ordinateur :
 
