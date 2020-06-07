@@ -45,6 +45,6 @@ flask run
 
 ## Auteurs
 
-* **Guole YANG** - [Guole YANG](https://github.com/yanggautier)
-* **Salim OKAR** - [Salim OKAR](https://github.com/SasaIA)
-* **François DEWYNTER** - [François Dewynter](https://github.com/francoisdewynter)
+* **Guole YANG** - [Github](https://github.com/yanggautier)
+* **Salim OKAR** - [Github(https://github.com/SasaIA)
+* **François DEWYNTER** - [Github](https://github.com/francoisdewynter)
