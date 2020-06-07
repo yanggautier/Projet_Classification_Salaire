@@ -6,7 +6,7 @@ profil:
 
 #Présentation Projet
 projet:
-  title1: Régression - 
+  title1: Classification
   title2: Prédiction salaire
   description: >
     L'objectif de ce projet est de scrapper les profils de différents postes afin de déterminer grâce à un algorithme quel 

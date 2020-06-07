@@ -5,13 +5,13 @@ import pickle
 
 app = Flask(__name__)
 app.config['JSON_SORT_KEYS'] = False
-model = pickle.load(open('../model.pkl', 'rb'))
+model = pickle.load(open('./Flask/model.pkl', 'rb'))
 
 
 @app.route('/')
 @app.route('/index')
 def index():
-    websitedata = yaml.load(open('_config.yaml', encoding='utf-8'))
+    websitedata = yaml.load(open('./Flask/_config.yaml', encoding='utf-8'))
     return render_template('index.html', data=websitedata)
 
 @app.route('/predict', methods=['GET', 'POST'])
@@ -80,7 +80,7 @@ def predict():
     else:
         devise = '$'
 
-    return render_template('predict.html', prediction_text = "Votre salaire est entre " + prediction + ' ' + devise + " par an en "+pays)
+    return render_template('predict.html', prediction_text = "Vous devez proposez un salaire compris entre " + prediction + ' ' + devise + " par an")
 
 
 if __name__ == '__main__':

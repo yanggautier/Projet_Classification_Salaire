@@ -37,13 +37,7 @@ model.fit(X, y)
 #print(confusion_matrix(y_test, grid_predictions))
 #print(classification_report(y_test, grid_predictions))
 
-pickle.dump(model, open('../model.pkl', 'wb'))
+pickle.dump(model, open('./Flask/model.pkl', 'wb'))
 
-
-# Loading model to compare the results
-#model = pickle.load(open('../model.pkl','rb'))
 #if __name__ == '__main__':
 #    main()
-
-# model = pickle.load(open('model.pkl','rb'))
-# print(model.predict([[2, 9, 6]]))
