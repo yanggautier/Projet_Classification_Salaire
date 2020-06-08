@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="../static/css/style.css"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- fontawesome -->
+    <link href="../static/vendor/fontawesome/css/all.min.css" rel="stylesheet">
+
+    <title>Classification - Prédiction Salaire</title>
+</head>
+
+<body>
+
+  <!-- NavBar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+    <a class="navbar-brand js-scroll-trigger" href="/">
+      <span class="d-none d-lg-block">
+        <img class="img-fluid img-profile mx-auto mb-1" src="../static/img/coding.gif" alt="">
+      </span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="/#about">À propos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="/#csv">CSV</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="/#prediction">Faire une Prédiction</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- À propos ! -->
+  <div class="pt-5 mt-5"">
+    <div class="container h-100 pt-5 mt-5">
+      <div class="row align-items-center h-100">
+        <div class="col-6 mx-auto">
+            <div class="jumbotron">
+                <p>{{ prediction_text }}</p>
+                <a href="/#prediction" class=""><small>Refaire une prédiction</small></a>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="../static/vendor/bootstrap/jquery/jquery.slim.min.js"></script>
+  <script src="../static/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+  <!-- JS -->
+  <script src="static/js/resume.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- fontawesome -->
+    <link href="../static/vendor/fontawesome/css/all.min.css" rel="stylesheet">
+
+    <title>Régression - Prédiction Salaire</title>
+</head>
+
+<body>
+
+  <!-- NavBar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+    <a class="navbar-brand js-scroll-trigger" href="#page-top">
+      <span class="d-none d-lg-block">
+        <img class="img-fluid img-profile mx-auto mb-1" src="../static/img/coding.gif" alt="">
+      </span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="/index">À propos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="/csv">CSV</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="/prediction">Faire une Prédiction</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- À propos ! -->
+  <div class="container-fluid p-0">
+
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="csv">
+      <div class="w-100">
+        <h2 class="mb-3">CSV</h2>
+        <p>Vous pouvez consulter les fichiers CSV des différents postes en France et aux USA:</p>
+        <!-- Begins card -->
+        <div class="row">
+          {% for _, item in data.csv.items() %}
+          <div class="col-md-3 mb-5">
+            <div class="card h-100">
+              <img src="static/img/{{ item.img }}" class="cardImg card-img-top" alt="{{ item.title }}">
+              <div class="card-body">
+                <h3 class="card-title">{{ item.title }}</h3>
+                <h5 class="card-title">{{ item.pays }}</h5>
+                <p class="card-text">{{ item.description }}</p>
+              </div>
+              <div class="card-footer text-center">
+                <p class='text-muted'>Vous pouvez télécharger et consulter le CSV</p>
+                {% if item.github != None %}
+                <a href="{{ item.github }}" class="text-dark" target="_blank">
+                  <i class="fab fa-github-square fa-2x"></i>
+                </a>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+
+    <!--
+     <div class="login">
+	<h1>Predict Salary Analysis</h1>
+
+      Main Input For Receiving Query to our ML
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="experience" placeholder="Experience" required="required" />
+        <input type="text" name="test_score" placeholder="Test Score" required="required" />
+		<input type="text" name="interview_score" placeholder="Interview Score" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+    -->
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="../static/vendor/bootstrap/jquery/jquery.slim.min.js"></script>
+  <script src="../static/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+
+  <!-- JS -->
+  <script src="static/js/resume.min.js"></script>
+
+</body>
+
+</html>
