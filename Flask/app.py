@@ -71,7 +71,6 @@ def predict():
     int_features = [int(x) for x in list(test.values())]
     final_features = [np.array(int_features)]
 
-
     prediction = model.predict(final_features)[0]
 
     if pays == "France":
