@@ -8,7 +8,7 @@ import pickle
 
 #def main():
 
-data = pd.read_csv("C:/Users/Utilisateur/Desktop/Projet/Flask/csv/Prepo.csv", sep=';', encoding="utf-8-sig")
+data = pd.read_csv("./Flask/csv/Prepo.csv", sep=';', encoding="utf-8-sig")
 
 X = data.drop('Classe de salaire par an', axis=1)
 y = data['Classe de salaire par an']
