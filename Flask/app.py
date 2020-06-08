@@ -14,18 +14,6 @@ def index():
     websitedata = yaml.load(open('_config.yaml', encoding='utf-8'))
     return render_template('index.html', data=websitedata)
 
-
-@app.route('/csv')
-def csv():
-    websitedata = yaml.load(open('_config.yaml', encoding='utf-8'))
-    return render_template('csv.html', data=websitedata)
-
-
-@app.route('/prediction', methods=['GET', 'POST'])
-def prediction():
-    return render_template('prediction.html',prediction_text=None)
-
-
 @app.route('/predict', methods=['GET', 'POST'])
 def predict():
     '''
@@ -85,14 +73,14 @@ def predict():
     final_features = [np.array(int_features)]
 
 
-    prediction = model.predict(final_features)[0]
+    prediction = int(model.predict(final_features)[0])
 
     if pays == "France":
         devise = '€'
     else:
         devise = '$'
 
-    return render_template('predict.html', prediction_text = "Votre salaire est entre " + prediction + ' ' + devise + " par an en "+pays)
+    return render_template('predict.html', prediction_text = "Votre salaire est autour de  " + str(prediction) + ' ' + devise + " par an en "+pays)
 
 
 if __name__ == '__main__':
