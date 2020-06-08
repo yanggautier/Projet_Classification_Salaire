@@ -1,5 +1,5 @@
 import oyaml as yaml
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request
 import numpy as np
 import pickle
 
