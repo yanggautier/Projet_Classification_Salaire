@@ -30,7 +30,13 @@ def predict():
         metier = "Développeur Java"
     else:
         metier = None
+    
+    studylevel = request.form.getlist('gridRadioEtude')[0]
+    explevel = request.form.getlist('gridRadioExp')[0]
+    pays = request.form.getlist('gridRadiosPays')[0]
+    skills = request.form.getlist('skills')
 
+    
     test = {'Confirmed': 0, 'Data Scientist': 0, 'Doctor': 0, 'Développeur Java': 0,
             'Développeur JavaScript': 0, 'Développeur Python': 0, 'Entry': 0, 'Expert': 0,
             'France': 0, 'Guaduate': 0, 'High School': 0, 'Intermediate': 0, 'Master': 0,
@@ -53,11 +59,6 @@ def predict():
             'Web Scrapping': 0, 'Server': 0, 'Blockchain': 0, 'English': 0, 'French': 0,
             'Postman': 0, 'Websphere': 0, 'Conception': 0, 'Documentation': 0, 'Teach': 0,
             'Debug': 0, 'Test': 0, 'Redux': 0, 'JQuery': 0, 'Maintenance': 0, 'Microservices': 0}
-
-    studylevel = request.form.getlist('gridRadioEtude')[0]
-    explevel = request.form.getlist('gridRadioExp')[0]
-    pays = request.form.getlist('gridRadiosPays')[0]
-    skills = request.form.getlist('skills')
 
     for skill in skills:
         test[skill] = 1
