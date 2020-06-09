@@ -271,18 +271,17 @@ def skill_required(row, skills):
 # La fonction qui donne un array de quantile à partir de ['Salaire minimum par an'] et ['Salaire maximum par an']
 def separe_quantile(df, number):
     list_prob = [1 / number * i for i in range(1, number + 1)]
-    array_min = df['Salaire minimum par an'].quantile(
-        q=list_prob, interpolation="linear")
-    array_max = df['Salaire maximum par an'].quantile(
-        q=list_prob, interpolation="linear")
+    array_min = df['Salaire minimum par an'].quantile(q=list_prob, interpolation="linear")
+    array_max = df['Salaire maximum par an'].quantile( q=list_prob, interpolation="linear")
 
-    liste_classe = [0]
+    liste_classe = [df['Salaire minimum par an'].min()]
 
     for i in range(number):
         liste_classe.append((array_min.values[i] + array_max.values[i]) / 2)
 
     liste_classe.pop()
     liste_classe.append(array_max.values[-1])
+    #print(liste_classe)
     return (liste_classe)
 
     # La fonction qui mets la classe de salaire de chaque ligne
@@ -290,10 +289,11 @@ def separe_quantile(df, number):
 
 def put_class_salaire(row, classes):
     mean = (row['Salaire minimum par an'] + row['Salaire maximum par an']) / 2
+    print(mean)
     for i in range(len(classes) - 1):
         if (classes[i] <= mean) and (mean <= classes[i + 1]):
-            row['Classe de salaire par an'] = str(
-                int(classes[i])) + (' - ') + str(int(classes[i + 1]))
+            row['Classe de salaire par an'] = str(int(classes[i])) + (' - ') + str(int(classes[i + 1]))
+    print(row['Classe de salaire par an'])
     return row
 
 
@@ -323,7 +323,7 @@ def in_colonne(row, column_name):
 def main():
     # prendres tout les noms de fichiers csv dans le array
     filenames = [
-        'C:/Users/yangg/Python/Projet_Classification_Salaire/Flask/csv/' + str.lower(job).replace(' ', '') + str.lower(
+        'C:/Users/yangg/Python/Projet_Classification_Salaire-master/Flask/csv/' + str.lower(job).replace(' ', '') + str.lower(
             country) + '.csv' for job, country in
         zip(jobs, countrys)]
 
@@ -411,12 +411,12 @@ def main():
     # Assigner les colonnes ['Salaire minimum par an'] et ['Salaire maximum par an'] par les valeurs de la colonne ['Salaire']
     df = df.apply(lambda row: minmaxSalary(row), axis=1)
 
-    df = df[df['Salaire minimum par an'] <= 200000]
-    df = df[df['Salaire minimum par an'] <= 300000]
+    df = df[(df['Salaire minimum par an'] <= 200000) & (df['Salaire maximum par an'] <= 200000) & (df['Salaire minimum par an'] >= 7200) & (df['Salaire maximum par an'] >= 7200)]
 
     df['Classe de salaire par an'] = np.nan
     df = df.apply(lambda row: put_class_salaire(row, separe_quantile(df, 3)), axis=1)
 
+    #print(df['Classe de salaire par an'])
 
     try:
         df = df.drop(['Salaire', 'Salaire minimum par an', 'Salaire maximum par an', 'Entreprise', 'Description'],

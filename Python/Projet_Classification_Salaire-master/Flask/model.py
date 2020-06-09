@@ -6,24 +6,24 @@ from sklearn.ensemble import RandomForestClassifier
 import pandas as pd
 import pickle
 
-#def main(): # executer une fois pour la première fois
+def main(): # executer une fois pour la première fois
 
-data = pd.read_csv("C:/Users/yangg/Python/Projet_Classification_Salaire-gautier/Flask/csv/Prepo.csv", sep=';', encoding="utf-8-sig")
+    data = pd.read_csv("C:/Users/yangg/Python/Projet_Classification_Salaire-master/Flask/csv/Prepo.csv", sep=';', encoding="utf-8-sig")
 
-X = data.drop('Classe de salaire par an', axis=1)
-y = data['Classe de salaire par an']
+    X = data.drop('Classe de salaire par an', axis=1)
+    y = data['Classe de salaire par an']
 
 
 
-model = RandomForestClassifier(n_estimators=500)
+    model = RandomForestClassifier(n_estimators=500)
 
-model.fit(X, y)
+    model.fit(X, y)
 
-pickle.dump(model, open('../model.pkl', 'wb'))
+    pickle.dump(model, open('../model.pkl', 'wb'))
 #pickle.dump(model, open('./Flask/model.pkl', 'wb')) en windows 32bits
 
-# if __name__ == '__main__':
-#   main()
+if __name__ == '__main__':
+   main()
 
 
 
